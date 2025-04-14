@@ -2,6 +2,10 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import MinMaxScaler
+from sklearn.model_selection import train_test_split
+from sklearn.svm import SVC
+from sklearn.metrics import accuracy_score
+from sklearn.preprocessing import StandardScaler
 
 # Load dataset
 file_path = "final_crime_dataset.csv"
@@ -27,7 +31,7 @@ print("Filled null values per column:")
 print(filled_values)
 
 # Save the processed file
-df_filled.to_csv('extraq_filled.csv', index=False)
+df_filled.to_csv('final_crime_dataset.csv', index=False)
 
 # Print unique values, min, and max for each column excluding 'Incident'
 print("\nUnique Values, Min, and Max for Each Attribute:")
@@ -117,3 +121,4 @@ for i, col in enumerate(model_features):
 
 plt.tight_layout()
 plt.show()
+
